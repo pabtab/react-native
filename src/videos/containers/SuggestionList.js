@@ -10,6 +10,8 @@ import Suggestion from '../components/Suggestion';
 
 export default class SuggestionList extends Component {
 
+  keyExtractor = (item) => item.id.toString()
+
   itemSeparator = () => <VerticalSeparator />
 
   renderEmpty = () => <Empty text="No recommendatios" />
@@ -35,7 +37,8 @@ export default class SuggestionList extends Component {
     return (
       <SuggestionListLayout title="Recomendations for you">
         <FlatList
-          data={list}
+          keyExtractor={this.keyExtractor}
+          data={this.props.list}
           ListEmptyComponent={this.renderEmpty}
           ItemSeparatorComponent={this.itemSeparator}
           renderItem={this.renderItem}
