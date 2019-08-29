@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    color: '#44546b',
+    color: 'blue',
   },
   year: {
     backgroundColor: '#70b124',
