@@ -3,12 +3,13 @@ import {
   FlatList,
   Text,
 } from 'react-native';
+import {connect} from 'react-redux'
 import SuggestionListLayout from '../components/SuggestionListLayout';
 import Empty from '../components/Empty';
 import VerticalSeparator from '../components/VerticalSeparator';
 import Suggestion from '../components/Suggestion';
 
-export default class SuggestionList extends Component {
+export class SuggestionList extends Component {
 
   keyExtractor = (item) => item.id.toString()
 
@@ -47,3 +48,17 @@ export default class SuggestionList extends Component {
     );
   }
 }
+
+
+const mapStateToProps = (state) => {
+  return {
+    list: state.suggestionList
+  }
+}
+
+const mapDispatchToProps = {
+  
+}
+
+
+export default connect(mapStateToProps)(SuggestionList)
