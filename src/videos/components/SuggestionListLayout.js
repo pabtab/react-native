@@ -2,16 +2,16 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import {
-  View,
+  ScrollView,
   Text,
   StyleSheet,
 } from 'react-native';
 
 const SuggestionListLayout = ({ title, children }) => (
-  <View style={styles.container}>
+  <ScrollView style={styles.container}>
     <Text style={styles.title}>{title}</Text>
     {children}
-  </View>
+  </ScrollView>
 );
 
 const styles = StyleSheet.create({

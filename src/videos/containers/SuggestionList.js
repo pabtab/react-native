@@ -11,6 +11,15 @@ import Suggestion from '../components/Suggestion';
 
 export class SuggestionList extends Component {
 
+  viewMovie = (item) => {
+    this.props.dispatch({
+      type: 'SET_SELECTED_MOVIE',
+      payload: {
+        movie: item
+      }
+    })
+  }
+
   keyExtractor = (item) => item.id.toString()
 
   itemSeparator = () => <VerticalSeparator />
@@ -19,7 +28,10 @@ export class SuggestionList extends Component {
 
   renderItem = ({item}) => {
     return (
-      <Suggestion {...item} />
+      <Suggestion
+        onPress={()=> this.viewMovie(item)}
+        {...item}
+      />
     )
   }
 

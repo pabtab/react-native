@@ -10,6 +10,9 @@ export default (state = initialState, { type, payload }) => {
     case 'SET_CATEGORY_LIST':
       return { ...state, ...payload };
 
+    case 'SET_SELECTED_MOVIE':
+      return { ...state, selectedMovie: payload.movie };
+
     default:
       return state;
   }
