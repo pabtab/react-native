@@ -17,7 +17,7 @@ const Header = ({ children }) => (
     <SafeAreaView>
       <View style={styles.container}>
         <Image
-          source={require('../../../assets/travel.png')}
+          source={require('../../../assets/travel.jpg')}
           style={styles.logo}
         />
         <View style={styles.right}>
